@@ -9,7 +9,11 @@ class SiteController < ApplicationController
 
   # Receive the result of service call
   def receive_call_result
-    sentence = @xml.elements['/sentence'].text
-    render text: "Call result: #{sentence}"
+    @sentence = @xml.elements['/sentence'].text
+  end
+  
+  # ignore this (not part of demo)
+  def test_select
+    render template: "#{params[:controller]}/#{params[:action]}", formats: [:xml], handlers: [:erb]
   end
 end

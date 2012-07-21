@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Application</title>
+</head>
+<body style='margin: 20%'>
+  <h1>Application</h1>
+  <p><%= link_to 'Call say_hello service with parameter "Dave"', 
+    controller: :site, action: :call_service %></p>
+  <button id='qworum-set'>set var</button>
+  <button id='qworum-get'>get var</button>
+  <script>
+  var button=document.getElementById('qworum-set');
+  button.addEventListener('click', _set);
+  function _set(){
+//alert(document.documentElement.innerHTML);
+    qworum.state.set('name', 'joe');
+//    alert(qworum.state.get('name'));
+  }
+  button=document.getElementById('qworum-get');
+  button.addEventListener('click', _get);
+  function _get(){
+    alert(qworum.state.get('name'));
+//    alert(qworum.state.get('name'));
+  }
+  </script>
+</body>
+</html>

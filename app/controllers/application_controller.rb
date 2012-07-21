@@ -13,4 +13,7 @@ protected
   rescue
     @xml = nil
   end
+  def render_xml
+    render template: "#{params[:controller]}/#{params[:action]}", formats: [:xml], handlers: [:builder]
+  end
 end
