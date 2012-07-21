@@ -1,5 +1,5 @@
 QworumHerokuAddonTestHerokuappCom::Application.routes.draw do
-  match '', controller: :site, action: :index
+  match '' => redirect('/site')
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
