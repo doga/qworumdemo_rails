@@ -6,6 +6,21 @@
 <body style='background: silver; margin: 20%'>
   <h1>Qworum Service say_hello</h1>
   <p>The current call will return: <%= @sentence %></p>
-  <p style='font-size: 70%'><%= link_to 'Click to return', action: :result %></p>
+  <button id='return'>Return</button>
+
+  <script>
+    var button = document.getElementById('return');
+    button.addEventListener('click', function(){
+       evaluateQworumMessage(['variable','result'], 'result');
+    });
+
+    function evaluateQworumMessage(msg, msgUrl){
+      if(typeof qworum == 'object')if(typeof qworum.eval == 'function'){
+        qworum.eval(msg);
+        return;
+      }
+      window.location = msgUrl;
+    }
+  </script>
 </body>
 </html>
