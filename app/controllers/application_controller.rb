@@ -1,11 +1,6 @@
 class ApplicationController < ActionController::Base
 #  protect_from_forgery
-  require 'rexml/document'
-  
-  def index
-    redirect_to controller: :site
-  end
-  
+  require 'rexml/document'  
 protected
   def parse_xml_post 
     @xml = nil

@@ -1,8 +1,5 @@
 class SiteController < ApplicationController
   before_filter :parse_xml_post, only: :receive_call_result
-
-  def index
-  end
   
   # Generate Qworum message for calling the service defined above
   def call_service
